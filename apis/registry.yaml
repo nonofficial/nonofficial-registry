@@ -1,0 +1,46 @@
+apiVersion: registry/v1
+kind: Api
+metadata:
+  name: registry
+spec:
+  display_name: "Apigee Registry API"
+  description: "The Registry API allows teams to track and manage machine-readable descriptions of APIs."
+  availability: PREVIEW
+  recommended_version: v1
+  recommended_deployment: 
+  labels:
+  annotations:
+  api_versions:
+  - kind: ApiVersion
+    metadata:
+      name: v1
+    spec:
+      display_name: "v1"
+      description: "New in 2022"
+      state: STAGING
+      labels:
+      annotations:
+      api_specs:
+      - kind: ApiSpec
+        metadata:
+          name: "protos"
+        spec:
+          filename:
+          description:
+          source_uri:
+          labels:
+          annotations:
+  api_deployments:
+  - kind: ApiDeployment
+    metadata:
+      name: prod
+    spec:
+      display_name: Production
+      description:
+      api_spec_revision:
+      endpoint_uri: https://apigeeregistry.googleapis.com
+      external_channel_uri:
+      intended_audience:
+      access_guidance:
+      labels:
+      annotations:
